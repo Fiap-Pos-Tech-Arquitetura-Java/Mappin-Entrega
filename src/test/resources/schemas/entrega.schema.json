@@ -1,0 +1,45 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "cpfEntregador": {
+      "type": "string"
+    },
+    "cepRaiz": {
+      "type": "string"
+    },
+    "status": {
+      "type": "string"
+    },
+    "pedidos": {
+      "type": "array",
+      "items": [
+        {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "string"
+            },
+            "idPedido": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "id",
+            "idPedido"
+          ]
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "cpfEntregador",
+    "cepRaiz",
+    "status",
+    "pedidos"
+  ]
+}

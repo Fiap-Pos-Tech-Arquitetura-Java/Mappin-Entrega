@@ -1,0 +1,32 @@
+services:
+  mapping-entrega:
+    image: 'mappin-entrega-docker-image'
+    build:
+      context: .
+    container_name: 'mappin-entrega-docker-container'
+    depends_on:
+      - db
+    ports:
+      - "8083:8083"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5435/mappin-entrega-db
+      - SPRING_DATASOURCE_USERNAME=mappin
+      - SPRING_DATASOURCE_PASSWORD=mappinEntrega
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create-drop
+    networks:
+      - mappin-network
+  db:
+    image: postgres:latest
+    container_name: mappin-entrega-db
+    command: -p 5435
+    ports:
+      - "5435:5435"
+    environment:
+      - POSTGRES_USER=mappin
+      - POSTGRES_PASSWORD=mappinEntrega
+      - POSTGRES_DB=mappin-entrega-db
+    networks:
+      - mappin-network
+networks:
+  mappin-network:
+    external: true

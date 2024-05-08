@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "array",
+  "items": [
+    {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string"
+        },
+        "cpfEntregador": {
+          "type": "string"
+        },
+        "cepRaiz": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "pedidos": {
+          "type": "array",
+          "items": [
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "idPedido": {
+                  "type": "string"
+                },
+                "idCliente": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "id",
+                "idPedido",
+                "idCliente"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "idPedido": {
+                  "type": "string"
+                },
+                "idCliente": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "id",
+                "idPedido",
+                "idCliente"
+              ]
+            },
+            {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "idPedido": {
+                  "type": "string"
+                },
+                "idCliente": {
+                  "type": "null"
+                }
+              },
+              "required": [
+                "id",
+                "idPedido",
+                "idCliente"
+              ]
+            }
+          ]
+        }
+      },
+      "required": [
+        "id",
+        "cpfEntregador",
+        "cepRaiz",
+        "status",
+        "pedidos"
+      ]
+    }
+  ]
+}
