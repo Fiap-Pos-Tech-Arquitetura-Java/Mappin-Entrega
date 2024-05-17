@@ -88,7 +88,7 @@ class EntregaServiceTest {
             assertThat(entregaSalvo.get(0).getId()).isNotNull();
 
             verify(entregaRepository, times(2)).save(any(Entrega.class));
-            verify(entregaRepository, times(2)).findEntregaByStatus(anyString());
+            verify(entregaRepository, times(1)).findEntregaByStatus(anyString());
             verify(entregaRepository, times(1)).findEntregaByStatusAndCepRaiz(anyString(), anyString());
             verify(pedidoProducer, times(1)).obterPedidosAguardandoEntrega();
             verify(clienteProducer, times(1)).obterCliente(any(UUID.class));
@@ -131,7 +131,7 @@ class EntregaServiceTest {
             assertThat(entregaSalvo.get(0).getId()).isNotNull();
 
             verify(entregaRepository, times(2)).save(any(Entrega.class));
-            verify(entregaRepository, times(2)).findEntregaByStatus(anyString());
+            verify(entregaRepository, times(1)).findEntregaByStatus(anyString());
             verify(entregaRepository, times(1)).findEntregaByStatusAndCepRaiz(anyString(), anyString());
             verify(pedidoProducer, times(1)).obterPedidosAguardandoEntrega();
             verify(clienteProducer, times(1)).obterCliente(any(UUID.class));
